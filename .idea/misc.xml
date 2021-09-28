@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/hyun/.gradle/caches/transforms-3/0b0980ca51981e705edcde2cc6074bb4/transformed/jetified-aws-android-sdk-auth-userpools-2.8.5/res/layout/activity_sign_up.xml" value="0.2046875" />
+        <entry key="..\:/Users/hyun/AndroidStudioProjects/Amplify/app/src/main/res/layout/activity_auth.xml" value="0.2046875" />
+        <entry key="..\:/Users/hyun/AndroidStudioProjects/Amplify/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/hyun/AndroidStudioProjects/Amplify/app/src/main/res/layout/activity_ok.xml" value="0.2046875" />
+        <entry key="..\:/Users/hyun/AndroidStudioProjects/Amplify/app/src/main/res/layout/activity_ok_acitivty.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/hyun/AndroidStudioProjects/Amplify/app/src/main/res/layout/activity_okactivity.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/hyun/AndroidStudioProjects/Amplify/app/src/main/res/layout/activity_sign_up.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/hyun/AndroidStudioProjects/Amplify/app/src/main/res/layout/activity_sign_upactivity.xml" value="0.20104166666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
