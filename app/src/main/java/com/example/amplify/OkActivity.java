@@ -24,8 +24,10 @@ public class OkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ok);
 
-        // 인증 확인버튼
+        // 인증 확인 버튼
         Button Ok_button = findViewById(R.id.Ok_button);
+        // 인증 재전송 버튼
+        Button Re_Ok_button = findViewById(R.id.Re_Ok_button);
 
         // SingUpActivity 에서 사용된 username 정보를 가져와 TextView에 넣는다.
         TextView TextView = findViewById(R.id.signUpUsername2);
@@ -61,7 +63,7 @@ public class OkActivity extends AppCompatActivity {
                                 } else {
 
                                     // 회원가입이 완료되면 로그인 창으로 이동
-                                    Toast.makeText(getApplicationContext(),"성공적으로 회원가입 되셨습니다.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "성공적으로 회원가입 되셨습니다.", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(OkActivity.this, AuthActivity.class);
                                     startActivity(i);
                                     finish();
@@ -81,8 +83,33 @@ public class OkActivity extends AppCompatActivity {
             }
 
         });
-    }
 
+        // 인증 코드 재전송 버튼
+        Re_Ok_button.setOnClickListener(new View.OnClickListener() {
+
+            // 인증 코드 재전송
+            @Override
+            public void onClick(View v) {
+
+                AWSMobileClient.getInstance().resendSignUp(username, new Callback<SignUpResult>() {
+                    @Override
+                    public void onResult(SignUpResult signUpResult) {
+                        Log.i(TAG, "A verification code has been sent via" +
+                                signUpResult.getUserCodeDeliveryDetails().getDeliveryMedium()
+                                + " at " +
+                                signUpResult.getUserCodeDeliveryDetails().getDestination());
+                        Toast.makeText(getApplicationContext(), "인증 메일이 재전송 되었습니다.", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Log.e(TAG, String.valueOf(e));
+                    }
+                });
+            }
+        });
+    }
 
     // 뒤로가기 2번 눌러야 종료
     private final long FINISH_INTERVAL_TIME = 1000;

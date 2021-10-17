@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +26,8 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_auth);
 
         Button signIn_button = findViewById(R.id.signIn_button); // 로그인 버튼
-        Button signUp_button = findViewById(R.id.signUp_button); // 회원가입 버튼
+        TextView signUp_button = findViewById(R.id.signUp_button); // 회원가입 버튼
+        TextView forgot_Password_button = findViewById(R.id.forgot_Password_button); // 비밀번호를 잊어버리셨나요?
 
         // 로그인이 되어있는지 확인
         AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback<UserStateDetails>() {
@@ -63,6 +65,19 @@ public class AuthActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = new Intent(AuthActivity.this, SignUpActivity.class);
+                startActivity(i);
+                finish();
+            }
+
+        });
+
+        // 비밀번호를 잊어버리셨나요?
+        forgot_Password_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(AuthActivity.this, ForgotActivity.class);
                 startActivity(i);
                 finish();
             }

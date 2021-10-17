@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Amplify">
+
+        <activity
+            android:name=".ForgotActivity"
+            android:exported="true" />
         <activity
             android:name=".OkActivity"
             android:exported="true" />
@@ -21,13 +25,16 @@
         <activity
             android:name=".AuthActivity"
             android:exported="true"
-            android:noHistory="true">
+            android:noHistory="true" />
+
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+    </application>
 </manifest>

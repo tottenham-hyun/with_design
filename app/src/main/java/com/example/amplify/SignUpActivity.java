@@ -22,7 +22,6 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-
         Button signUp_button2 = findViewById(R.id.signUp_button2); // 회원 가입 버튼
 
         // 회원 가입 버튼
@@ -86,10 +85,8 @@ public class SignUpActivity extends AppCompatActivity {
             }
 
         });
-
     }
 
-    // 뒤로가기 2번 눌러야 종료
     private final long FINISH_INTERVAL_TIME = 1000;
     private long backPressedTime = 0;
 
@@ -108,7 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
         else
         {
             backPressedTime = tempTime;
-            Toast.makeText(getApplicationContext(), "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "한번 더 누를시 종료됩니다.", Toast.LENGTH_SHORT).show();
         }
     }
 }
