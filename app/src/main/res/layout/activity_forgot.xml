@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity" >
+    app:passwordToggleEnabled="true"
+    tools:context=".SignUpActivity">
 
     <TextView
         android:id="@+id/textView7"
@@ -25,8 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원가입시 등록한 정보로 인증을 통해"
-        android:textSize="15dp"
         android:textColor="@color/black"
+        android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,16 +72,17 @@
         android:id="@+id/code_button"
         android:layout_width="304dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="376dp"
         android:background="@drawable/button_nobackground"
         android:text="인증코드발송"
         android:textColor="@color/purple_700"
         android:textSize="15dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.364"
-
+        app:layout_constraintHorizontal_bias="0.345"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -97,7 +99,7 @@
         app:layout_constraintHorizontal_bias="0.358"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609"
+        app:layout_constraintVertical_bias="0.585"
         tools:ignore="TextContrastCheck" />
 
     <EditText
@@ -106,6 +108,7 @@
         android:layout_height="53dp"
         android:background="#E0E0E0"
         android:hint="비밀번호 재설정"
+        android:inputType="textPassword"
         android:padding="15dp"
         android:textColor="#A0A0A0"
         android:textStyle="bold"
@@ -114,14 +117,14 @@
         app:layout_constraintHorizontal_bias="0.349"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.744"
+        app:layout_constraintVertical_bias="0.724"
         tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/new_paw_button"
         android:layout_width="304dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/button_nobackground"
         android:text="비밀번호 재설정 완료"
         android:textColor="@color/purple_700"
@@ -131,7 +134,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
 
