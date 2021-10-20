@@ -1,7 +1,13 @@
 package com.example.amplify;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +22,7 @@ import com.amazonaws.mobile.client.Callback;
 import com.amazonaws.mobile.client.results.SignUpResult;
 import com.amazonaws.mobile.client.results.UserCodeDeliveryDetails;
 
+
 public class OkActivity extends AppCompatActivity {
     String TAG = AuthActivity.class.getSimpleName();
 
@@ -27,7 +34,7 @@ public class OkActivity extends AppCompatActivity {
         // 인증 확인 버튼
         Button Ok_button = findViewById(R.id.Ok_button);
         // 인증 재전송 버튼
-        Button Re_Ok_button = findViewById(R.id.Re_Ok_button);
+        TextView Re_Ok_button = findViewById(R.id.Re_Ok_button);
 
         // SingUpActivity 에서 사용된 username 정보를 가져와 TextView에 넣는다.
         TextView TextView = findViewById(R.id.signUpUsername2);
@@ -35,6 +42,11 @@ public class OkActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         String username = bundle.getString("email");
         TextView.setText(username);
+
+        TextView text_info = (TextView)findViewById(R.id.text_info);
+        SpannableStringBuilder sp = new SpannableStringBuilder(text_info.getText());
+        sp.setSpan(new ForegroundColorSpan(0xFF66B2FF),19,24,Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+        text_info.setText(sp);
 
         // 인증 버튼
         Ok_button.setOnClickListener(new View.OnClickListener() {
