@@ -32,6 +32,7 @@ import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.Callback;
 import com.amazonaws.mobile.client.UserStateDetails;
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = findViewById(R.id.textView9);
         serial_number = findViewById(R.id.serial_number);
         signOut_button = findViewById(R.id.signOut_button);
         btnData = findViewById(R.id.btnData);
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                                                 // list의 json 값들을 넣는다.
                                                 list.add(new Data(temp.getString("image"), temp.getString("time"), temp.getString("serial")));
                                             }
-                                            Log.e("Fail:","!");
+
                                         }
                                         // adapter에 적용
                                         adapter.setmovieList(list);

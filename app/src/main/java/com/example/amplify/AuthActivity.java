@@ -54,7 +54,6 @@ public class AuthActivity extends AppCompatActivity {
                         // Log and toast
                         String msg = getString(R.string.msg_token_fmt, token);
                         Log.d(TAG, msg);
-                        Toast.makeText(AuthActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
 
                 });

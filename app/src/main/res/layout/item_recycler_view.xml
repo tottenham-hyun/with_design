@@ -7,6 +7,8 @@
     <TextView
         android:id="@+id/textView1"
         style="@style/recyclerview_contents"
+        android:linksClickable="true"
+        android:autoLink="web"
         android:text="영화이름" />
 
 
