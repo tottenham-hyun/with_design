@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "827946111684",
+    "project_id": "kauproject-9d76c",
+    "storage_bucket": "kauproject-9d76c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827946111684:android:efba820d14509f75082f91",
+        "android_client_info": {
+          "package_name": "com.example.amplify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827946111684-vr358uqcgdnuvm88nsnsobmpt85mco6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC1xpXIvofE8fx2Lmdthc5_HOTJR0IGfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827946111684-vr358uqcgdnuvm88nsnsobmpt85mco6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

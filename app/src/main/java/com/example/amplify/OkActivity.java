@@ -1,6 +1,7 @@
 package com.example.amplify;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -15,12 +16,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.Callback;
 import com.amazonaws.mobile.client.results.SignUpResult;
 import com.amazonaws.mobile.client.results.UserCodeDeliveryDetails;
+import com.google.firebase.FirebaseApp;
+
 
 
 public class OkActivity extends AppCompatActivity {
@@ -48,8 +52,12 @@ public class OkActivity extends AppCompatActivity {
         sp.setSpan(new ForegroundColorSpan(0xFF66B2FF),19,24,Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
         text_info.setText(sp);
 
+
+
         // 인증 버튼
         Ok_button.setOnClickListener(new View.OnClickListener() {
+
+
 
             // 인증 코드 확인
             @Override
@@ -57,6 +65,8 @@ public class OkActivity extends AppCompatActivity {
 
                 EditText code_name = findViewById(R.id.code_name);
                 String code = code_name.getText().toString();
+
+
 
                 AWSMobileClient.getInstance().confirmSignUp(username, code, new Callback<SignUpResult>() {
                     @Override
@@ -76,6 +86,7 @@ public class OkActivity extends AppCompatActivity {
 
                                     // 회원가입이 완료되면 로그인 창으로 이동
                                     Toast.makeText(getApplicationContext(), "성공적으로 회원가입 되셨습니다.", Toast.LENGTH_SHORT).show();
+
                                     Intent i = new Intent(OkActivity.this, AuthActivity.class);
                                     startActivity(i);
                                     finish();
@@ -89,6 +100,7 @@ public class OkActivity extends AppCompatActivity {
                     public void onError(Exception e) {
                         Log.e(TAG, "Confirm sign-up error", e);
                     }
+
                 });
 
 

@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
@@ -15,6 +17,12 @@ import com.amazonaws.mobile.client.Callback;
 import com.amazonaws.mobile.client.UserState;
 import com.amazonaws.mobile.client.UserStateDetails;
 import com.amazonaws.mobile.client.results.SignInResult;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.*;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class AuthActivity extends AppCompatActivity {
 
@@ -28,6 +36,28 @@ public class AuthActivity extends AppCompatActivity {
         Button signIn_button = findViewById(R.id.signIn_button); // 로그인 버튼
         TextView signUp_button = findViewById(R.id.signUp_button); // 회원가입 버튼
         TextView forgot_Password_button = findViewById(R.id.forgot_Password_button); // 비밀번호를 잊어버리셨나요?
+
+
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        String token = task.getResult();
+
+                        // Log and toast
+                        String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d(TAG, msg);
+                        Toast.makeText(AuthActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+
+                });
 
         // 로그인이 되어있는지 확인
         AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback<UserStateDetails>() {
