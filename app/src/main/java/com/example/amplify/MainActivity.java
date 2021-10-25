@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
                                     try {
                                         // out_list의 length만큼 for문 반복
+                                        list.clear();
                                         for (int i = 0; i < our_list.length(); i++) {
                                             // our_list를 각 JSONObject 형태로 객체를 생성한다.
                                             JSONObject temp = our_list.getJSONObject(i);
