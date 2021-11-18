@@ -11,16 +11,16 @@
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:background="@drawable/button_nobackground"
-        android:hint="시리얼 넘버를 입력해주세요"
         android:gravity="center"
+        android:hint="시리얼 넘버를 입력해주세요"
         android:textColor="@color/purple_700"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077"
+        app:layout_constraintVertical_bias="0.076"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -29,10 +29,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnData"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.301" />
 
     <Button
         android:id="@+id/signOut_button"
@@ -45,10 +45,10 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerview"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintTop_toBottomOf="@+id/serial_number"
+        app:layout_constraintVertical_bias="0.063" />
 
     <Button
         android:id="@+id/btnData"
@@ -61,10 +61,10 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/serial_number"
-        app:layout_constraintVertical_bias="0.077"
+        app:layout_constraintVertical_bias="0.065"
         tools:ignore="MissingConstraints" />
 
 

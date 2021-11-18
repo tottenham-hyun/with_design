@@ -1,11 +1,10 @@
-package com.example.amplify;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.amplify.amplify;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class SplashActivity extends Activity {
     @Override

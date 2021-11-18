@@ -1,13 +1,9 @@
-package com.example.amplify;
+package com.amplify.amplify;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
@@ -16,15 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.Callback;
 import com.amazonaws.mobile.client.results.SignUpResult;
 import com.amazonaws.mobile.client.results.UserCodeDeliveryDetails;
-import com.google.firebase.FirebaseApp;
-
 
 
 public class OkActivity extends AppCompatActivity {

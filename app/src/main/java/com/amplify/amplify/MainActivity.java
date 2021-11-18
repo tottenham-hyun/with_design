@@ -1,4 +1,4 @@
-package com.example.amplify;
+package com.amplify.amplify;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,14 +25,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.mobile.client.AWSMobileClient;
+
 import com.amazonaws.mobile.client.Callback;
-import com.amazonaws.mobile.client.UserStateDetails;
-import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -4,23 +4,4 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
-
-    <TextView
-        android:id="@+id/service_info"
-        android:layout_width="275dp"
-        android:layout_height="258dp"
-        android:fontFamily="@font/noto"
-        android:text="전동 킥보드
-        헬멧 미착용
-        감지 서비스"
-        android:textColor="@color/white"
-        android:textSize="52dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".SplashActivity"/>

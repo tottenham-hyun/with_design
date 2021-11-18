@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "827946111684",
-    "project_id": "kauproject-9d76c",
-    "storage_bucket": "kauproject-9d76c.appspot.com"
+    "project_number": "448412228030",
+    "project_id": "kauproject-74ddd",
+    "storage_bucket": "kauproject-74ddd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:827946111684:android:efba820d14509f75082f91",
+        "mobilesdk_app_id": "1:448412228030:android:5e0a7cae7be653186781ef",
         "android_client_info": {
-          "package_name": "com.example.amplify"
+          "package_name": "com.amplify.amplify"
         }
       },
       "oauth_client": [
         {
-          "client_id": "827946111684-vr358uqcgdnuvm88nsnsobmpt85mco6e.apps.googleusercontent.com",
+          "client_id": "448412228030-vtlkl2lukkr6vp01mpr4k6pll5i8s52o.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCC1xpXIvofE8fx2Lmdthc5_HOTJR0IGfE"
+          "current_key": "AIzaSyBi3SPEGZX-T2-YGDxN1Kwad5khDQJME0g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "827946111684-vr358uqcgdnuvm88nsnsobmpt85mco6e.apps.googleusercontent.com",
+              "client_id": "448412228030-vtlkl2lukkr6vp01mpr4k6pll5i8s52o.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

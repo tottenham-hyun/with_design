@@ -1,4 +1,4 @@
-package com.example.amplify;
+package com.amplify.amplify;
 
 import android.content.Context;
 
