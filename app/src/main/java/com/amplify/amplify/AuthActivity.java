@@ -31,18 +31,15 @@ public class AuthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
-        Button signIn_button = findViewById(R.id.signIn_button); // 로그인 버튼
-        TextView signUp_button = findViewById(R.id.signUp_button); // 회원가입 버튼
-        TextView forgot_Password_button = findViewById(R.id.forgot_Password_button); // 비밀번호를 잊어버리셨나요?
+        Button signin_button = findViewById(R.id.signin_button); // 로그인 버튼
+        TextView signup_button = findViewById(R.id.signup_button); // 회원가입 버튼
+        TextView forgot_password = findViewById(R.id.forgot_password); // 비밀번호를 잊어버리셨나요?
 
 
         // 로그인이 되어있는지 확인
         AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback<UserStateDetails>() {
-
             @Override
             public void onResult(UserStateDetails userStateDetails) {
-                Log.i(TAG, userStateDetails.getUserState().toString());
-
                 // 로그인이 되어있으면 MainActivity 로 이동
                 if (userStateDetails.getUserState() == UserState.SIGNED_IN) {
                     Intent i = new Intent(AuthActivity.this, MainActivity.class);
@@ -57,8 +54,7 @@ public class AuthActivity extends AppCompatActivity {
         });
 
         // 로그인 버튼
-        signIn_button.setOnClickListener(new View.OnClickListener() {
-
+        signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showSignIn();
@@ -66,11 +62,9 @@ public class AuthActivity extends AppCompatActivity {
         });
 
         // 회원가입 버튼
-        signUp_button.setOnClickListener(new View.OnClickListener() {
-
+        signup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(AuthActivity.this, SignUpActivity.class);
                 startActivity(i);
                 finish();
@@ -79,7 +73,7 @@ public class AuthActivity extends AppCompatActivity {
         });
 
         // 비밀번호를 잊어버리셨나요?
-        forgot_Password_button.setOnClickListener(new View.OnClickListener() {
+        forgot_password.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -98,10 +92,10 @@ public class AuthActivity extends AppCompatActivity {
 
         // 아이디 비밀번호 순
         EditText login_id = findViewById(R.id.login_id);
-        EditText login_paw = findViewById(R.id.login_paw);
+        EditText login_pw = findViewById(R.id.login_pw);
 
         String username = login_id.getText().toString();
-        String password = login_paw.getText().toString();
+        String password = login_pw.getText().toString();
 
 
         AWSMobileClient.getInstance().signIn(username, password, null, new Callback<SignInResult>() {
@@ -110,10 +104,10 @@ public class AuthActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d(TAG, "Sign-in callback state: " + signInResult.getSignInState());
+                        Log.d(TAG, "Sign-in" + signInResult.getSignInState());
                         switch (signInResult.getSignInState()) {
                             case DONE:
-                                Toast.makeText(getApplicationContext(), "Sign-in done.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Sign-in Finish.", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent(AuthActivity.this, MainActivity.class);
                                 startActivity(i);
                                 finish();

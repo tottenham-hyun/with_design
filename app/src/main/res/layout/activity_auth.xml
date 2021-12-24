@@ -58,7 +58,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/login_paw"
+        android:id="@+id/login_pw"
         android:layout_width="305dp"
         android:layout_height="53dp"
         android:layout_centerHorizontal="true"
@@ -78,7 +78,7 @@
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/forgot_Password_button"
+        android:id="@+id/forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="비밀번호 재설정"
@@ -108,7 +108,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/signIn_button"
+        android:id="@+id/signin_button"
         android:layout_width="305dp"
         android:layout_height="53dp"
         android:text="로그인"
@@ -140,7 +140,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/signUp_button"
+        android:id="@+id/signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원가입>"

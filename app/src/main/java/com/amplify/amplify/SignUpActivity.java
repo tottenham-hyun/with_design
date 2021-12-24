@@ -44,8 +44,6 @@ public class SignUpActivity extends AppCompatActivity {
                 final Map<String, String> attributes = new HashMap<>();
                 attributes.put("name", name);
                 attributes.put("email", username);
-                Log.d("TTT",attributes.toString());
-
 
                 AWSMobileClient.getInstance().signUp(username, password, attributes, null, new Callback<SignUpResult>() {
                     @Override
@@ -53,8 +51,6 @@ public class SignUpActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-
-                                Log.d(TAG, "Sign-up callback state: " + signUpResult.getConfirmationState());
                                 if (!signUpResult.getConfirmationState()) {
 
 
@@ -69,8 +65,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                                 } else {
                                     // 인증 코드 창으로 이동
-                                    Toast.makeText(getApplicationContext(), "Sign-up done.", Toast.LENGTH_SHORT).show();
-                                    Log.e(TAG, "Sddd");
+                                    Toast.makeText(getApplicationContext(), "Sign-up.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

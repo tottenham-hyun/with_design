@@ -23,7 +23,7 @@ public class ForgotActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot);
 
         Button code_button = findViewById(R.id.code_button); // 인증 코드 버튼
-        Button new_paw_button = findViewById(R.id.new_paw_button); // 비밀번호 재설정 버튼
+        Button new_pw_button = findViewById(R.id.new_pw_button); // 비밀번호 재설정 버튼
 
 
         // 인증 버튼
@@ -31,11 +31,9 @@ public class ForgotActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
-
                 // 인증코드 확인
-                EditText paw_signUpUsername = (EditText) findViewById(R.id.paw_signUpUsername);
-                String username = paw_signUpUsername.getText().toString();
+                EditText pw_signUpUsername = (EditText) findViewById(R.id.pw_signUpUsername);
+                String username = pw_signUpUsername.getText().toString();
 
                 AWSMobileClient.getInstance().forgotPassword(username, new Callback<ForgotPasswordResult>() {
                     @Override
@@ -67,21 +65,21 @@ public class ForgotActivity extends AppCompatActivity {
 
 
         // 비밀번호 재설정 버튼
-        new_paw_button.setOnClickListener(new View.OnClickListener() {
+        new_pw_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
                 // 인증코드, 비밀번호 재설정
-                EditText paw_code_name = (EditText) findViewById(R.id.paw_code_name);
-                EditText new_paw_name = (EditText) findViewById(R.id.new_paw_name);
+                EditText pw_code_name = (EditText) findViewById(R.id.pw_code_name);
+                EditText new_pw_name = (EditText) findViewById(R.id.new_pw_name);
 
 
-                String CONFIRMATION_CODE = paw_code_name.getText().toString();
-                String NEW_PASSWORD_HERE = new_paw_name.getText().toString();
+                String confirm_code = pw_code_name.getText().toString();
+                String new_password = new_pw_name.getText().toString();
 
 
-                AWSMobileClient.getInstance().confirmForgotPassword(NEW_PASSWORD_HERE, CONFIRMATION_CODE, new Callback<ForgotPasswordResult>() {
+                AWSMobileClient.getInstance().confirmForgotPassword(new_password, confirm_code, new Callback<ForgotPasswordResult>() {
                     @Override
                     public void onResult(final ForgotPasswordResult result) {
                         runOnUiThread(new Runnable() {
@@ -91,7 +89,7 @@ public class ForgotActivity extends AppCompatActivity {
                                 if (result.getState() == ForgotPasswordState.DONE) {
 
                                     // 비밀번호가 재설정 되었으면 로그인 창으로 이동
-                                    Toast.makeText(getApplicationContext(), "성공적으로 비밀번호가 재설정 되었습니다.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "비밀번호가 재설정 되었습니다.", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(ForgotActivity.this, AuthActivity.class);
                                     startActivity(i);
                                     finish();
@@ -112,9 +110,6 @@ public class ForgotActivity extends AppCompatActivity {
         });
     }
 
-
-
-    // 뒤로가기 2번 눌러야 종료
     private final long FINISH_INTERVAL_TIME = 1000;
     private long backPressedTime = 0;
 
@@ -123,7 +118,6 @@ public class ForgotActivity extends AppCompatActivity {
         long tempTime = System.currentTimeMillis();
         long intervalTime = tempTime - backPressedTime;
 
-        // 뒤로 가기 할 경우 AuthActivity 화면으로 이동
         if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime)
         {
             Intent i = new Intent(ForgotActivity.this, AuthActivity.class);

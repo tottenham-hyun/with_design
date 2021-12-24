@@ -52,7 +52,7 @@
         app:layout_constraintVertical_bias="0.223" />
 
     <EditText
-        android:id="@+id/paw_signUpUsername"
+        android:id="@+id/pw_signUpUsername"
         android:layout_width="305dp"
         android:layout_height="53dp"
         android:background="#E0E0E0"
@@ -86,7 +86,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/paw_code_name"
+        android:id="@+id/pw_code_name"
         android:layout_width="305dp"
         android:layout_height="53dp"
         android:background="#E0E0E0"
@@ -103,7 +103,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/new_paw_name"
+        android:id="@+id/new_pw_name"
         android:layout_width="305dp"
         android:layout_height="53dp"
         android:background="#E0E0E0"
@@ -121,7 +121,7 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/new_paw_button"
+        android:id="@+id/new_pw_button"
         android:layout_width="304dp"
         android:layout_height="48dp"
         android:layout_marginBottom="104dp"
