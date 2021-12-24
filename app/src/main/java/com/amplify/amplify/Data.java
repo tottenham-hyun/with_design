@@ -2,9 +2,9 @@ package com.amplify.amplify;
 
 public class Data {
 
-    private String image;      // 영화이름
-    private String time;      // 누적관객수
-    private String serial;       // 영화개봉일
+    private String image;
+    private String time;
+    private String serial;
 
     public String getimage() {return image;}
     public void setimage(String image) {this.image = image;}

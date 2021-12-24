@@ -9,18 +9,18 @@
         style="@style/recyclerview_contents"
         android:linksClickable="true"
         android:autoLink="web"
-        android:text="영화이름" />
+        android:text="url" />
 
 
     <TextView
         android:id="@+id/textView2"
         style="@style/recyclerview_contents"
-        android:text="누적관객수" />
+        android:text="time" />
 
     <TextView
         android:id="@+id/textView3"
         style="@style/recyclerview_contents"
-        android:text="영화개봉일" />
+        android:text="serial" />
 
 
 </LinearLayout>

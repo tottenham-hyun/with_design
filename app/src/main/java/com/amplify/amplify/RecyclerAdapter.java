@@ -7,21 +7,24 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-    private ArrayList<Data> mData = new ArrayList<>();
+    public ArrayList<Data> mData = new ArrayList<>();
 
 
     // 아이템 뷰를 저장하는 viewholder 클래스
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView1;     // 영화이름
-        TextView textView2;     // 누적관객수
-        TextView textView3;     // 영화개봉일
+        TextView textView1;
+        TextView textView2;
+        TextView textView3;
 
 
 

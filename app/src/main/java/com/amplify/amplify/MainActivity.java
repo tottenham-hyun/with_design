@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobile.client.UserStateDetails;
@@ -26,6 +27,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import com.amazonaws.mobile.client.Callback;
 
@@ -39,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnData;
     private RecyclerView recyclerview;
     private RecyclerAdapter adapter = new RecyclerAdapter();    // adapter 생성
-
-    private ArrayList<Data> list = new ArrayList<>();
+    public ArrayList<Data> lists = new ArrayList<>();
 
 
 
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void run() {
                                     try {
                                         // out_list의 length만큼 for문 반복
-                                        list.clear();
+                                        lists.clear();
                                         for (int i = 0; i < our_list.length(); i++) {
                                             // our_list를 각 JSONObject 형태로 객체를 생성한다.
                                             JSONObject temp = our_list.getJSONObject(i);
@@ -107,12 +109,12 @@ public class MainActivity extends AppCompatActivity {
                                             if(num.equals(temp.getString("serial"))) {
                                                 Log.e("Success","!");
                                                 // list의 json 값들을 넣는다.
-                                                list.add(new Data(temp.getString("image"), temp.getString("time"), temp.getString("serial")));
+                                                lists.add(new Data(temp.getString("image"), temp.getString("time"), temp.getString("serial")));
                                             }
 
                                         }
                                         // adapter에 적용
-                                        adapter.setmovieList(list);
+                                        adapter.setmovieList(lists);
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -121,10 +123,13 @@ public class MainActivity extends AppCompatActivity {
                             });
 
                         } catch (MalformedURLException e) {
+
                             e.printStackTrace();
                         } catch (IOException e) {
+
                             e.printStackTrace();
-                        } catch (JSONException e) {
+                        } catch (JSONException e){
+
                             e.printStackTrace();
                         }
                     }

@@ -36,26 +36,6 @@ public class AuthActivity extends AppCompatActivity {
         TextView forgot_Password_button = findViewById(R.id.forgot_Password_button); // 비밀번호를 잊어버리셨나요?
 
 
-
-        FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
-
-                        // Get new FCM registration token
-                        String token = task.getResult();
-
-                        // Log and toast
-                        String msg = getString(R.string.msg_token_fmt, token);
-                        Log.d(TAG, msg);
-                    }
-
-                });
-
         // 로그인이 되어있는지 확인
         AWSMobileClient.getInstance().initialize(getApplicationContext(), new Callback<UserStateDetails>() {
 
@@ -137,15 +117,6 @@ public class AuthActivity extends AppCompatActivity {
                                 Intent i = new Intent(AuthActivity.this, MainActivity.class);
                                 startActivity(i);
                                 finish();
-                                break;
-                            case SMS_MFA:
-                                Toast.makeText(getApplicationContext(), "Please confirm sign-in with SMS.", Toast.LENGTH_SHORT).show();
-                                break;
-                            case NEW_PASSWORD_REQUIRED:
-                                Toast.makeText(getApplicationContext(), "Please confirm sign-in with new password.", Toast.LENGTH_SHORT).show();
-                                break;
-                            default:
-                                Toast.makeText(getApplicationContext(), "Unsupported sign-in confirmation: " + signInResult.getSignInState(), Toast.LENGTH_SHORT).show();
                                 break;
                         }
                     }
